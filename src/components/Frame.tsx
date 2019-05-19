@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import isNode from 'detect-node';
+// import isNode from 'detect-node';
 import classnames from 'classnames';
 
 // import Footer from './Footer';
@@ -24,11 +24,9 @@ class Frame extends React.PureComponent<{}, State> {
     }
 
     render() {
-        const { initialized } = this.state;
-
         return (
             <div
-                className={ classnames((this.props as any).className, { initialized }) }
+                className={ classnames((this.props as any).className) }
             >
                 <div className="frame__content">
                     <div className="frame__content--inner">
@@ -64,7 +62,7 @@ export default styled(Frame)`
     .frame__content--inner {
         margin: 0 auto;
         min-width: 260px;
-        max-width: 1028px;
+        /* max-width: 1028px; */
         width: 100%
     }
 

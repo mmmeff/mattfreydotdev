@@ -58,7 +58,6 @@ export default styled(Nav)`
     font-size: 1.1rem;
     justify-content: space-between;
     margin: 0 auto 2rem;
-    /* max-width: 40vw; */
     min-width: 260px;
     padding: 0.5rem 1rem;
     position: relative;

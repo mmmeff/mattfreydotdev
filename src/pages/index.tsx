@@ -26,7 +26,7 @@ const StyledContainer = styled.div`
         background-image: url('/static/bgs/me.jpg');
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: left bottom;
+        background-position: left top;
         width: 100vw;
         mix-blend-mode: lighten;
         position: absolute;
