@@ -1,25 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
+import { GiMountaintop } from 'react-icons/gi';
+import { FaGithub, FaLinkedin, FaGitlab, FaEnvelope } from 'react-icons/fa';
 
 export default class Home extends React.PureComponent {
+    private links: any = [
+        [ 'https://www.gitlab.com/matthewfrey', <FaGitlab /> ],
+        [ 'https://www.github.com/mmmeff', <FaGithub /> ],
+        [ 'https://www.linkedin.com/in/matthewefrey', <FaLinkedin /> ],
+        [ 'mailto:matthewfrey@protonmail.com', <FaEnvelope /> ]
+    ]
+
     render() {
         return (
             <StyledContainer>
                 <div className="me"></div>
-                <div className="circle"></div>
+                <div className="glyph"></div>
+                
                 <div className="content">
-                    <h1 className="content__name">
-                        Matt Frey
-                    </h1>
-                    <h3 className="content__is-a">
-                        is currently a <strong>
-                            Front-End Engineer
-                        </strong> at <strong className="imdb">
-                            IMDb
-                        </strong> and he lives in <strong>
-                            Seattle, WA 🏔
-                        </strong>
-                    </h3>
+                    <div className="the-fold">
+                        <h1 className="content__name">
+                            Matt Frey
+                        </h1>
+                        <h3 className="content__is-a">
+                            is currently a <strong>
+                                Front-End Engineer
+                            </strong> at <strong className="imdb">
+                                <a href="https://www.imdb.com">IMDb</a>
+                            </strong> and lives in <strong>
+                                Seattle,&nbsp;WA&nbsp;<GiMountaintop />
+                            </strong>
+                        </h3>
+                        <div className="content__spacer" />
+                    </div>
+
+                    <div className="content__info">
+                        {
+                            this.links.map((link) => (
+                                <a key={ link[0] } href={ link[0]} target="_blank">
+                                    { link[1] }
+                                </a>
+                            ))
+                        }
+                    </div>
                 </div>
             </StyledContainer>
         );
@@ -31,46 +54,120 @@ const StyledContainer = styled.div`
         position: relative;
         max-width: 1024px;
         margin: 0 auto;
-        padding: 0 2rem;
+        padding: 0 2rem 2rem;
         z-index: 2;
 
+        .the-fold {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            position: relative;
+        }
+
         strong {
-            color: ${ ({ theme }) => theme.colors.secondary };
+            color: white;
+            text-shadow: 1px 2px red;
+            font-style: italic;
+            font-size: 1.1em;
 
             &.imdb {
                 display: inline-block;
                 background: #F5C518;
-                padding: 0 0.4rem;
+                padding: 0 0.33em;
                 border-radius: 5px;
-                color: black;
-                opacity: 0.9;
+                font-family: 'Impact', sans-serif;
+                font-style: initial;
+                text-shadow: none;
+
+                a { 
+                    color: black;
+                    &:hover:after { display: none }
+                }
             }
         }
 
         &__name {
-            font-size: 15vw;
-            width: 40vw;
-            text-align: right;
-            mix-blend-mode: overlay;
+            font-size: 3em;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            position: absolute;
+            top: 3rem;
+
+            @media (min-width: 1024px) {
+                font-size: 10rem;
+                text-align: right;
+                width: 40vw;
+                top: 0;
+                left: 0;
+            }
         }
 
         &__is-a {
-            width: 40vw;
-            margin-left: auto;
+            font-size: 2rem;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 15vh;
+
+            @media (min-width: 768px) {
+                font-size: 3rem;
+                text-align: left;
+                margin: 0 0 0 auto;
+                width: 50vw;
+                bottom: 10rem;
+                right: 0;
+            }
+        }
+
+        &__spacer {
+            height: 5rem;
+            width: 33%;
+            color: ${ ({ theme }) => theme.colors.lineColor };
+            opacity: 0.5;
+            margin: 3rem auto;
+            clip-path: polygon(0 0, 50% 33%, 100% 0, 100% 66%, 50% 100%, 0 66%);
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC);
+            flex-shrink: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        &__info {
+            border: ${ ({ theme }) => theme.lineSizes.thin } solid ${ ({ theme }) => theme.colors.lineColor };
+            border: ${ ({ theme }) => theme.lineSizes.thin } solid ${ ({ theme }) => theme.colors.primary };
+            border-radius: 3px;
+            padding: ${ ({ theme }) => theme.lineSizes.thic };
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                color: white;
+                vertical-align: middle;
+                margin: 1rem;
+            }
         }
     }
 
-    .circle {
+    .glyph {
+        clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
         width: 40vw;
         height: 40vw;
-        border-radius: 100%;
-        background: black;
+        /* border-radius: 100%; */
+        /* background: black; */
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC);
         margin: 5rem auto 0;
-        mix-blend-mode: soft-light;
+        mix-blend-mode: overlay;
         pointer-events: none;
         position: absolute;
         left: 0;
         right: 0;
+        top: 10rem;
         margin: auto;
     }
 
@@ -82,7 +179,6 @@ const StyledContainer = styled.div`
         width: 100vw;
         mix-blend-mode: lighten;
         position: absolute;
-        /* top: ${ ({ theme }) => theme.lineSizes.thiccc }; */
         top: 0;
         right: ${ ({ theme }) => theme.lineSizes.thiccc };
         bottom: 0;

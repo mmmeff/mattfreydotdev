@@ -1,12 +1,11 @@
 import React from 'react'
 import App, { Container } from 'next/app'
 import { ThemeProvider } from 'styled-components';
+// import { IconContext } from 'react-icons';
 
 import GlobalStyles from '../designsystem/styles/GlobalStyles';
 import getTheme from '../designsystem/theme';
 import Frame from '../components/Frame';
-// import Nav from '../components/Nav';
-
 
 class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {
@@ -21,17 +20,25 @@ class MyApp extends App {
 
     render() {
         const { Component, pageProps } = this.props
+        
+        const Wrappers = ({ children }) => (
+            /* <IconContext.Provider value={{ color: getTheme('light').colors.textColor }}> */
+            <ThemeProvider theme={ getTheme('light') }>
+                <Container>
+                    { children }
+                </Container>
+            </ThemeProvider>
+            /* </IconContext.Provider> */
+        );
 
         return (
-            <Container>
-                <ThemeProvider theme={ getTheme('light') }>
-                    <Frame>
-                        <GlobalStyles />
-                        {/* <Nav /> */}
-                        <Component {...pageProps} />
-                    </Frame>
-                </ThemeProvider>
-            </Container>
+            <Wrappers>
+                <Frame>
+                    <GlobalStyles />
+                    {/* <Nav /> */}
+                    <Component {...pageProps} />
+                </Frame>
+            </Wrappers>
         )
     }
 }

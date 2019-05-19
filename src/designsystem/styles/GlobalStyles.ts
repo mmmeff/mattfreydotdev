@@ -33,17 +33,19 @@ const GlobalStyles = createGlobalStyle`
             background-color: currentColor;
             transition: all 0.3s;
             opacity: 0;
-            /* width: 0%; */
         }
 
         &:hover,
         &:focus {
             &:after {
                 height: 2px;
-                /* width: 100%; */
                 opacity: 1;
             }
         }
+    }
+
+    .react-icons {
+        vertical-align: middle;
     }
 `
 

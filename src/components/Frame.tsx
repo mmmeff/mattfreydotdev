@@ -42,13 +42,18 @@ class Frame extends React.PureComponent<{}, State> {
 
 export default styled(Frame)`
     /* background-image: url('/static/bgs/shed.webp'); */
-    background-color: ${ ({ theme }) => theme.colors.primary };
+    /* background-color: ${ ({ theme }) => theme.colors.primary }; */
+    background-image: linear-gradient(
+        to bottom right,
+        ${ ({ theme }) => theme.colors.primary },
+        ${ ({ theme }) => theme.colors.secondary }
+    );
     background-size: cover;
     background-position: top center;
     font-size: 2rem;
 
     .frame__content {
-        border: ${ ({ theme }) => theme.lineSizes.thiccc } solid ${ ({ theme }) => theme.colors.lineColor };
+        border: ${ ({ theme }) => theme.lineSizes.thiccc } solid ${ ({ theme }) => theme.colors.primary };
         border-top-width: 0;
         border-bottom-width: 0;
         bottom: 0;
