@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     a {
-        color: ${ ({ theme }) => theme.colors.primary };
+        color: ${ ({ theme }) => theme.colors.linkColor };
         text-decoration: none;
         transition: all 0.2s;
         border-bottom: 0px solid currentColor;

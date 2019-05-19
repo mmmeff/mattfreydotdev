@@ -6,9 +6,6 @@ import classnames from 'classnames';
 // import Footer from './Footer';
 
 interface State {
-    initialized: boolean;
-    mx?: number;
-    my?: number;
 }
 
 class Frame extends React.PureComponent<{}, State> {
@@ -16,9 +13,7 @@ class Frame extends React.PureComponent<{}, State> {
         super(props);
 
         this.state = {
-            initialized: false,
-            mx: isNode ? undefined : window.innerWidth / 2,
-            my: isNode ? undefined : window.innerHeight / 2,
+            bgImage: '/static/bgs/shed_thumb.webp',
         }
     }
 
@@ -26,7 +21,6 @@ class Frame extends React.PureComponent<{}, State> {
     }
 
     componentWillUnmount() {
-
     }
 
     render() {
@@ -35,10 +29,7 @@ class Frame extends React.PureComponent<{}, State> {
         return (
             <div
                 className={ classnames((this.props as any).className, { initialized }) }
-                onMouseEnter={ () => this.setState({ initialized: true })}
-                onMouseLeave={ () => this.setState({ initialized: false })}
             >
-                {/* <div className="frame__shadow" /> */}
                 <div className="frame__content">
                     <div className="frame__content--inner">
                         { this.props.children }
@@ -52,35 +43,28 @@ class Frame extends React.PureComponent<{}, State> {
 }
 
 export default styled(Frame)`
-    /* .frame__shadow {
-        border: ${ ({ theme }) => theme.lineSizes.thic } solid rgba(0,0,0,0.1);
-        bottom: ${ ({ theme }) => theme.lineSizes.thic };
-        content: '';
-        display: block;
-        filter: blur(3px);
-        left: ${ ({ theme }) => theme.lineSizes.thic };
-        opacity: 0;
-        position: absolute;
-        right: ${ ({ theme }) => theme.lineSizes.thic };
-        top: ${ ({ theme }) => theme.lineSizes.thic }; 
-    } */
+    /* background-image: url('/static/bgs/shed.webp'); */
+    background-color: ${ ({ theme }) => theme.colors.primary };
+    background-size: cover;
+    background-position: top center;
 
     .frame__content {
-        border: ${ ({ theme }) => theme.lineSizes.thicc } solid ${ ({ theme }) => theme.colors.lineColor };
+        border: ${ ({ theme }) => theme.lineSizes.thiccc } solid ${ ({ theme }) => theme.colors.lineColor };
+        border-top-width: 0;
+        border-bottom-width: 0;
         bottom: 0;
         left: 0;
         overflow: auto;
-        margin: ${ ({ theme }) => theme.lineSizes.thin };
         overscroll-behavior: auto;
         right: 0;
         top: 0;
-        min-height: calc(100vh - (${ ({ theme }) => theme.lineSizes.thicc }));
+        min-height: 100vh;
     }
 
     .frame__content--inner {
         margin: 0 auto;
         min-width: 260px;
-        max-width: 40vw;
+        max-width: 1028px;
         width: 100%
     }
 

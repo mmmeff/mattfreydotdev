@@ -12,7 +12,7 @@ class Nav extends React.PureComponent<Props> {
         const { className } = this.props;
 
         const links = [
-            [ 'About', '/about' ],
+            // [ 'About', '/about' ],
             [ 'Blog', '/blog' ]
         ];
 
@@ -25,19 +25,21 @@ class Nav extends React.PureComponent<Props> {
             <ThemeProvider theme={ getTheme('dark') }>
                 <div className={ className }>
                     <Link href='/'>
-                        <a>🧙‍♂mattfrey.dev</a>
+                        <a>mattfrey.dev</a>
                     </Link>
 
-                    <div className="nav__links">
-                        {
-                            links.map((link, i) => (
-                                <React.Fragment key={ link[1] }>
-                                    <Link href={ link[1] }><a>{ link[0] }</a></Link>
-                                    { i < links.length - 1  && ' | ' }
-                                </React.Fragment>
-                            ))
-                        }
-                    </div>
+                    {
+                        links.map((link, i) => (
+                            <React.Fragment key={ link[1] }>
+                                <Link href={ link[1] }>
+                                    <a className="nav__link">
+                                        •&nbsp;{ link[0] }
+                                    </a>
+                                </Link>
+                                { i < links.length - 1  && ' | ' }
+                            </React.Fragment>
+                        ))
+                    }
                 </div>
             </ThemeProvider>
         )
@@ -46,18 +48,19 @@ class Nav extends React.PureComponent<Props> {
 
 export default styled(Nav)`
     align-items: center;
-    background: ${ ({ theme }) => theme.colors.background };
-    border: ${ ({ theme }) => theme.lineSizes.thic } solid ${ ({ theme }) => theme.colors.lineColor };
-    border-top-width: 0;
+    background-color: ${ ({ theme }) => theme.colors.background };
+    background-image: url('/static/bgs/shed mini.webp');
+    background-size: cover;
+    background-position: bottom center;
+    border-bottom: ${ ({ theme }) => theme.lineSizes.thin } solid ${ ({ theme }) => theme.colors.lineColor };
     color: ${ ({ theme }) => theme.colors.textColor };
     display: flex;
     font-size: 1.1rem;
-    height: 3.5rem;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 40vw;
+    justify-content: space-between;
+    margin: 0 auto 2rem;
+    /* max-width: 40vw; */
     min-width: 260px;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     position: relative;
     top: -1px;
     width: 100%;
@@ -66,12 +69,7 @@ export default styled(Nav)`
         color: ${ ({ theme }) => theme.colors.textColor };
     }
 
-    a:hover {
-        color: ${ ({ theme }) => theme.colors.primary}
-    }
-
-    .nav__links {
-        margin-left: auto;
-        margin-top: 3px;
+    .nav__link {
+        font-size: 0.8em;
     }
 `

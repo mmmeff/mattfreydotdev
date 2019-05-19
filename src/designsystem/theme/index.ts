@@ -2,14 +2,16 @@ const darkColors: Colors = {
     background: '#252525',
     textColor: 'rgba(255,255,255,0.9)',
     lineColor: 'rgba(255,255,255,0.5)',
+    linkColor: '#84CBE1',
     primary: '#1185F9',
 };
 
 const lightColors: Colors = {
     background: '#FCFCFC',
     textColor: 'rgba(0,0,0,0.8)',
+    linkColor: '#1185F9',
     lineColor: 'rgba(0,0,0,0.5)',
-    primary: '#67499A'
+    primary: '#9EB9D4'
 };
 
 export const getTheme: (mode: 'light' | 'dark') => Theme = (mode) => ({
