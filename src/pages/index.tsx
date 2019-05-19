@@ -1,19 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
+import Head from 'next/head';
 import { GiMountaintop } from 'react-icons/gi';
 import { FaGithub, FaLinkedin, FaGitlab, FaEnvelope } from 'react-icons/fa';
 
 export default class Home extends React.PureComponent {
     private links: any = [
-        [ 'https://www.gitlab.com/matthewfrey', <FaGitlab /> ],
-        [ 'https://www.github.com/mmmeff', <FaGithub /> ],
-        [ 'https://www.linkedin.com/in/matthewefrey', <FaLinkedin /> ],
-        [ 'mailto:matthewfrey@protonmail.com', <FaEnvelope /> ]
+        [ 'LinkedIn', 'https://www.linkedin.com/in/matthewefrey', <FaLinkedin /> ],
+        [ 'Gitlab', 'https://www.gitlab.com/matthewfrey', <FaGitlab /> ],
+        [ 'Github', 'https://www.github.com/mmmeff', <FaGithub /> ],
+        [ 'Email me', 'mailto:matthewfrey@protonmail.com', <FaEnvelope /> ]
     ]
 
     render() {
         return (
             <StyledContainer>
+                <Head>
+                    <title>Matthew Frey</title>
+                    <meta 
+                        name="description" 
+                        content="The landing page of Matthew Frey - a Front-End Engineer living in Seattle, WA"
+                    />
+                </Head>
                 <div className="me"></div>
                 <div className="glyph"></div>
                 
@@ -37,8 +45,14 @@ export default class Home extends React.PureComponent {
                     <div className="content__info">
                         {
                             this.links.map((link) => (
-                                <a key={ link[0] } href={ link[0]} target="_blank">
-                                    { link[1] }
+                                <a 
+                                    key={ link[1] } 
+                                    href={ link[1]} 
+                                    target="_blank"
+                                    aria-label={ link[0] }
+                                    rel="noopener"
+                                >
+                                    { link[2] }
                                 </a>
                             ))
                         }
@@ -172,7 +186,7 @@ const StyledContainer = styled.div`
     }
 
     .me {
-        background-image: url('/static/bgs/me.jpg');
+        background-image: url('/static/bgs/me.webp');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: left top;
@@ -185,6 +199,4 @@ const StyledContainer = styled.div`
         z-index: 1;
         pointer-events: none;
     }
-
-    
 `

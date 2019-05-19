@@ -21,7 +21,7 @@ export default class Doc extends Document<{ styleTags: any }> {
     render() {
         return (
             <ThemeProvider theme={ getTheme('light') }>
-                <html>
+                <html lang="en">
                     <Head>
                         <link
                             rel="stylesheet"
