@@ -5,6 +5,7 @@
         "semicolon": false,
         "ter-indent": 4,
         "variable-name": false,
-        "ter-arrow-parens": false
+        "ter-arrow-parens": false,
+        "max-line-length": 160
     }
 }

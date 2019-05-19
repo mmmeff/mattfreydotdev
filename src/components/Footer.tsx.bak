@@ -1,0 +1,15 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const Footer: React.FC = (props: any) => {
+    return (
+        <div className={ props.className }></div>
+    )
+};
+
+export default styled(Footer)`
+    background: ${ ({ theme }) => theme.light.colors.textColor };
+    margin: ${ ({ theme }) => theme.lineSizes.thic };
+    margin-top: 0;
+    min-height: 200px;
+`;

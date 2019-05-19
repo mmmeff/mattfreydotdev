@@ -4,21 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "cicd": "next build && next export"
+    "dev": "next src",
+    "build": "next build src",
+    "start": "next start src",
+    "cicd": "next build src && next export src"
   },
   "author": "Matthew Frey <matthewfrey118@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@zeit/next-typescript": "^1.1.1",
+    "classnames": "^2.2.6",
+    "detect-node": "^2.0.4",
     "next": "^8.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.7",
+    "@types/detect-node": "^2.0.0",
     "@types/next": "^8.0.5",
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
