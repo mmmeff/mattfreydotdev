@@ -2,8 +2,9 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import { ThemeProvider } from 'styled-components';
 
-import Frame from '../components/Frame';
+import GlobalStyles from '../designsystem/styles/GlobalStyles';
 import getTheme from '../designsystem/theme';
+import Frame from '../components/Frame';
 import Nav from '../components/Nav';
 
 
@@ -25,6 +26,7 @@ class MyApp extends App {
             <Container>
                 <ThemeProvider theme={ getTheme('light') }>
                     <Frame>
+                        <GlobalStyles />
                         <Nav />
                         <Component {...pageProps} />
                     </Frame>
