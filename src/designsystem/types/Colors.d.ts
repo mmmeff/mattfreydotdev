@@ -4,4 +4,5 @@ declare interface Colors {
     lineColor: string;
     linkColor: string;
     primary: string;
+    secondary: string;
 }

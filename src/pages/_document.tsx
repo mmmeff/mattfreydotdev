@@ -23,10 +23,10 @@ export default class Doc extends Document<{ styleTags: any }> {
             <ThemeProvider theme={ getTheme('light') }>
                 <html>
                     <Head>
-                        {/* <link
+                        <link
                             rel="stylesheet"
                             href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
-                        /> */}
+                        />
 
                         { this.props.styleTags }
                     </Head>

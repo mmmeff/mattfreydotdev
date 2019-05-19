@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from '../designsystem/styles/GlobalStyles';
 import getTheme from '../designsystem/theme';
 import Frame from '../components/Frame';
-import Nav from '../components/Nav';
+// import Nav from '../components/Nav';
 
 
 class MyApp extends App {
@@ -27,7 +27,7 @@ class MyApp extends App {
                 <ThemeProvider theme={ getTheme('light') }>
                     <Frame>
                         <GlobalStyles />
-                        <Nav />
+                        {/* <Nav /> */}
                         <Component {...pageProps} />
                     </Frame>
                 </ThemeProvider>

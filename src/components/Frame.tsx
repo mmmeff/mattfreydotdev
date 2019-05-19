@@ -45,6 +45,7 @@ export default styled(Frame)`
     background-color: ${ ({ theme }) => theme.colors.primary };
     background-size: cover;
     background-position: top center;
+    font-size: 2rem;
 
     .frame__content {
         border: ${ ({ theme }) => theme.lineSizes.thiccc } solid ${ ({ theme }) => theme.colors.lineColor };

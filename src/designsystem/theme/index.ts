@@ -4,6 +4,7 @@ const darkColors: Colors = {
     lineColor: 'rgba(255,255,255,0.5)',
     linkColor: '#84CBE1',
     primary: '#1185F9',
+    secondary: '#D52FA8'
 };
 
 const lightColors: Colors = {
@@ -11,7 +12,8 @@ const lightColors: Colors = {
     textColor: 'rgba(0,0,0,0.8)',
     linkColor: '#1185F9',
     lineColor: 'rgba(0,0,0,0.5)',
-    primary: '#9EB9D4'
+    primary: '#9EB9D4',
+    secondary: '#D52FA8'
 };
 
 export const getTheme: (mode: 'light' | 'dark') => Theme = (mode) => ({
