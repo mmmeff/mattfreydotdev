@@ -105,6 +105,9 @@ const StyledContainer = styled.div`
             place-self: end;
             text-align: center;
             width: 100%;
+            line-height: 0.9em;
+
+
 
             @media (min-width: 1024px) {
                 font-size: 10rem;
@@ -112,11 +115,12 @@ const StyledContainer = styled.div`
         }
 
         &__is-a {
-            font-size: 2rem;
+            font-size: 1.5rem;
             grid-row: span 2;
             place-self: center;
             text-align: center;
             width: 100%;
+            padding: 0 1rem;
 
             @media (min-width: 1024px) {
                 font-size: 3rem;
@@ -127,15 +131,19 @@ const StyledContainer = styled.div`
             align-items: center;
             border-radius: 3px;
             border: ${ ({ theme }) => theme.lineSizes.thin } solid ${ ({ theme }) => theme.colors.primary };
-            display: flex;
-            justify-content: center;
             padding: ${ ({ theme }) => theme.lineSizes.thic };
             place-self: center;
+            margin: 0.5rem;
+            font-size: 1.5rem;
 
             a {
                 color: white;
                 vertical-align: middle;
                 margin: 1rem;
+            }
+
+            @media (min-width: 420px) {
+                font-size: 2.5rem;
             }
         }
     }
