@@ -29,20 +29,20 @@ export const Resume = () => (
         </div>
 
         <ResumeSection title="Experience">
-            {resumeData.experience.map(x => (
-                <ExperienceItem {...x} />
+            {resumeData.experience.map((x, i) => (
+                <ExperienceItem key={ i } {...x} />
             ))}
         </ResumeSection>
 
         <ResumeSection title="Education">
-            {resumeData.education.map(x => (
-                <EducationItem {...x} />
+            {resumeData.education.map((x, i) => (
+                <EducationItem key={ i } {...x} />
             ))}
         </ResumeSection>
 
         <ResumeSection title="Notable Projects">
-            {resumeData.projects.map(x => (
-                <ProjectItem {...x} />
+            {resumeData.projects.map((x, i) => (
+                <ProjectItem key={ i } {...x} />
             ))}
         </ResumeSection>
     </StyledContainer>
