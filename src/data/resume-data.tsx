@@ -56,7 +56,7 @@ export const experience: ExperienceItem[] = [
         endDate: "05/2016",
         responsibilities: [
             "Full-stack developer and front-end expert on a large, multi-national team",
-            "kTeam leader for Team Conversion, tasked with improving click-through rates across the site"
+            "Team leader for Team Conversion, tasked with improving click-through rates across the site"
         ]
     },
     {

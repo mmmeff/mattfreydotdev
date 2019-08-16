@@ -26,7 +26,6 @@ const StyledContainer = styled.section`
         margin: 0.75rem 0 0.5rem 0rem;
         opacity: 0.8;
         color: ${({ theme }) => theme.colors.primary};
-        text-align: center;
     }
 
     &.pageBreak {
