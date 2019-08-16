@@ -1,34 +1,34 @@
-import Document, { Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet, ThemeProvider } from 'styled-components';
+import Document, { Head, Main, NextScript } from "next/document";
+import { ServerStyleSheet, ThemeProvider } from "styled-components";
 
-import getTheme from '../designsystem/theme';
+import getTheme from "../designsystem/theme";
 
 export default class Doc extends Document<{ styleTags: any }> {
     static getInitialProps({ renderPage }) {
-        const sheet = new ServerStyleSheet()
+        const sheet = new ServerStyleSheet();
 
-        const page = renderPage((App) => {
-            return (props) => {
+        const page = renderPage(App => {
+            return props => {
                 return sheet.collectStyles(<App {...props} />);
-            }
-        })
+            };
+        });
 
-        const styleTags = sheet.getStyleElement()
+        const styleTags = sheet.getStyleElement();
 
-        return { ...page, styleTags }
+        return { ...page, styleTags };
     }
 
     render() {
         return (
-            <ThemeProvider theme={ getTheme('light') }>
+            <ThemeProvider theme={getTheme("light")}>
                 <html lang="en">
                     <Head>
                         <link
                             rel="stylesheet"
-                            href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
+                            href="https://fonts.googleapis.com/css?family=Roboto+Slab"
                         />
 
-                        { this.props.styleTags }
+                        {this.props.styleTags}
                     </Head>
 
                     <body>
@@ -38,7 +38,6 @@ export default class Doc extends Document<{ styleTags: any }> {
                     </body>
                 </html>
             </ThemeProvider>
-        )
+        );
     }
 }
-

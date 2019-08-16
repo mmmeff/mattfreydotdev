@@ -1,0 +1,198 @@
+import { ExperienceItem } from "../components/resume/ExperienceItem";
+import { FaGithub, FaEnvelope, FaGlobeAmericas, FaPhone } from "react-icons/fa";
+import { ProjectItem } from "../components/resume/ProjectItem";
+import { EducationItem } from "../components/resume/EducationItem";
+
+export const contactLinks = [
+    {
+        href: "https://www.mattfrey.dev",
+        label: "mattfrey.dev",
+        icon: <FaGlobeAmericas />
+    },
+    { href: "te:18453810044", label: "(845) 381-0044", icon: <FaPhone /> },
+    {
+        href: "https://www.github.com/mmmeff",
+        label: "github.com/mmmeff",
+        icon: <FaGithub />
+    },
+    {
+        href: "mailto:matthewfrey@protonmail.com",
+        label: "matthewfrey@protonmail.com",
+        icon: <FaEnvelope />
+    }
+];
+
+export const experience: ExperienceItem[] = [
+    {
+        primary: true,
+        name: "IMDb (Amazon)",
+        position: "Front-End Engineer (L5)",
+        location: "Seattle, WA 🏔",
+        startDate: "07/2018",
+        endDate: "present",
+        responsibilities: [
+            "On the Web-UI team tasked with increasing organizational front-end development velocity",
+            "Building pattern libraries, documentation sites, and CLI build tools to help IMDb.com go fully responsive by 2020",
+            "Supporting multiple other teams and initiatives across the organization by building libraries/tools to improve both developer and user-experience",
+            "Sharing on-call duty with platform team as first line of defense against outages"
+        ]
+    },
+    {
+        name: "MD Insider",
+        position: "Staff Software Engineer",
+        location: "Santa Monica, CA 🏄‍♂️",
+        startDate: "05/2016",
+        endDate: "06/2018",
+        responsibilities: [
+            "Lead a full scale overhaul of the companyʼs primary product, moving to an isomorphic/universal Node/React/Redux stack",
+            "Migrated from AWS EC2 Instances to Google Kubernetes Engine"
+        ]
+    },
+    {
+        name: "ScoreBig",
+        position: "Staff Software Engineer",
+        location: "Los Angeles, CA 🌴",
+        startDate: "01/2015",
+        endDate: "05/2016",
+        responsibilities: [
+            "Full-stack developer and front-end expert on a large, multi-national team",
+            "kTeam leader for Team Conversion, tasked with improving click-through rates across the site"
+        ]
+    },
+    {
+        name: "REVOLT TV",
+        position: "Digital Engineer",
+        location: "Hollywood, CA 🎬",
+        startDate: "11/2013",
+        endDate: "01/2015",
+        responsibilities: [
+            "Front-end developer and graphic designer",
+            "Operated on a small MEAN-stack team",
+            "Maintained both music news site and in-house CMS"
+        ]
+    },
+    {
+        name: "Parse3",
+        position: "User Interface Developer",
+        location: "Warwick, NY 👨‍🌾",
+        startDate: "09/2012",
+        endDate: "11/2013",
+        responsibilities: [
+            "Started as a co-op full-stack developer",
+            "Maintained legacy systems and was fully autonomous on several projects",
+            "Headed onboarding of incoming co-ops"
+        ]
+    }
+];
+
+export const education: EducationItem[] = [
+    {
+        name: "Rochester Institute of Technology",
+        study: "Software Engineering",
+        startDate: "2010",
+        endDate: "2013",
+        description: `
+            Studied Software Engineering until taking a co-op at Parse3 and was
+            offered a full-time position before returning to school. Classwork was
+            heavily focused on application architecture and emerging technologies,
+            commonly in the form of agile development project teams.
+        `
+    }
+];
+
+export const projects: ProjectItem[] = [
+    {
+        name: "PLAID (Pattern Library)",
+        employer: "IMDb.com",
+        year: "2018+",
+        description: `
+            The "Pattern Library for Atomic Interface Design," or PLAID for short, is
+            a design system that aims for adoption across all of IMDb's front-ends. It
+            is fully themeable using CSS vars, supports both React and Java integrations,
+            and is fully accessible and progressively enhanced.
+        `
+    },
+    {
+        name: "Boomer",
+        year: "2018+",
+        employer: "IMDb.com",
+        description: `
+            The Boomer build tool allows developers to iterate on front-end code using
+            all of the latest modern tooling while allowing for completely distributed,
+            "micro-frontend" architectures via deterministic asset generation and lambda
+            server-side-renderer generation.
+        `
+    },
+    {
+        name: "MD Insider Scout",
+        employer: "MD Insider",
+        year: "2018",
+        description: `
+            Served as the primary front-end developer on creating a new isomorphic React
+            and Redux single-page application built with typescript. Scout is a search-engine
+            that allows both patients and professionals to search, filter, and narrow down
+            both doctors and institutions based on an ever-growing set of criteria.
+        `
+    },
+    {
+        name: "Kubernetes/Google Cloud Migration",
+        employer: "MD Insider",
+        year: "2017",
+        description: `
+            Migrated many front-end and back-end services from AWS EC2 instances
+            to the Kubernetes container orchestration system on Google Cloud Platform,
+            allowing for cheaper and more dynamic scaling and an easier-to-maintain architecture.
+        `
+    },
+    {
+        name: "Interactive Seatmaps",
+        employer: "ScoreBig",
+        year: "2016",
+        description: `
+            Improved consumers' ticket-buying experience by creating both staff tooling and
+            client-side apps that leverage SVG seatmaps, allowing users to view
+            and choose their tickets down to the very seat.
+        `
+    },
+    {
+        name: "Go-Live Video Chat Client",
+        employer: "REVOLT TV",
+        year: "2015",
+        description: `
+            Worked closely with our studios to create a fully-integrated video
+            chat client for both viewers and VIPs to dial in a video call to any
+            live program, straight from the website to the studio.
+        `
+    },
+    {
+        name: "Lucene.NET Solr Faceting Algorithm",
+        employer: "Parse3",
+        year: "2014",
+        client: "Crayola",
+        description: `
+            Created a faceting algorithm to alleviate high server-load and user
+            bounce rates on Crayolaʼs faceted product navigation, utilizing
+            bitwise operations on search index hits to reduce average peak
+            server load by over 66%.
+        `
+    },
+    {
+        name: "Crayola ColorCycle Program",
+        employer: "Parse3",
+        year: "2013",
+        client: "Crayola",
+        description: `
+            A front-end product still live today on Crayola.com, ColorCycle is a web
+            dashboard allowing educators to generate FedEx shipping labels to return
+            used/empty Crayola markers for recycling. Involved integration with the
+            FedEx SOAP APIs from an ASP.NET/Sitecore codebase.
+        `
+    }
+];
+
+export default {
+    contactLinks,
+    experience,
+    education,
+    projects
+};

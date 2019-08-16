@@ -1,59 +1,52 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 // import isNode from 'detect-node';
-import classnames from 'classnames';
+import classnames from "classnames";
 
 // import Footer from './Footer';
 
-interface State {
-}
+interface State {}
 
 class Frame extends React.PureComponent<{}, State> {
     constructor(props: any) {
         super(props);
 
         this.state = {
-            bgImage: '/static/bgs/shed_thumb.webp',
-        }
+            bgImage: "/static/bgs/shed_thumb.webp"
+        };
     }
 
-    componentDidMount() {
-    }
+    componentDidMount() {}
 
-    componentWillUnmount() {
-    }
+    componentWillUnmount() {}
 
     render() {
         return (
-            <div
-                className={ classnames((this.props as any).className) }
-            >
+            <div className={classnames((this.props as any).className)}>
                 <div className="frame__content">
                     <div className="frame__content--inner">
-                        { this.props.children }
+                        {this.props.children}
                     </div>
                 </div>
 
                 {/* <Footer /> */}
             </div>
-        )
+        );
     }
 }
 
 export default styled(Frame)`
-    /* background-image: url('/static/bgs/shed.webp'); */
-    /* background-color: ${ ({ theme }) => theme.colors.primary }; */
     background-image: linear-gradient(
         to bottom right,
-        ${ ({ theme }) => theme.colors.primary },
-        ${ ({ theme }) => theme.colors.secondary }
+        ${({ theme }) => theme.colors.primary},
+        ${({ theme }) => theme.colors.secondary}
     );
     background-size: cover;
     background-position: top center;
-    font-size: 2rem;
 
     .frame__content {
-        border: ${ ({ theme }) => theme.lineSizes.thiccc } solid ${ ({ theme }) => theme.colors.primary };
+        border: ${({ theme }) => theme.lineSizes.thiccc} solid
+            ${({ theme }) => theme.colors.primary};
         border-top-width: 0;
         border-bottom-width: 0;
         bottom: 0;
@@ -62,14 +55,21 @@ export default styled(Frame)`
         overscroll-behavior: auto;
         right: 0;
         top: 0;
-        min-height: 100vh;
+        min-height: calc(100vh - 40px);
+
+        @media print {
+            border: none;
+        }
     }
 
     .frame__content--inner {
         margin: 0 auto;
         min-width: 260px;
-        /* max-width: 1028px; */
-        width: 100%
+        width: 100%;
+
+        @media screen {
+            padding-top: 40px;
+        }
     }
 
     &.initialized {

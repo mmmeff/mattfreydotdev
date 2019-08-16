@@ -1,13 +1,17 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
     *, *:before, *:after { box-sizing: border-box; }
 
     html {
-        background-color: ${ ({ theme }) => theme.colors.background };
+        background-color: ${({ theme }) => theme.colors.background};
         font-size: 16px;
-        color: ${ ({ theme }) => theme.colors.textColor };
+        color: ${({ theme }) => theme.colors.textColor};
         font-family: 'Roboto Slab', monospace, serif;
+
+        @media print {
+            font-size: 12px;
+        }
     }
 
     html, body {
@@ -16,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     a {
-        color: ${ ({ theme }) => theme.colors.linkColor };
+        color: ${({ theme }) => theme.colors.linkColor};
         text-decoration: none;
         transition: all 0.2s;
         border-bottom: 0px solid currentColor;
@@ -44,9 +48,14 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    ul {
+        line-height: 1.5em;
+        padding-left: 1.25rem;
+    }
+
     .react-icons {
         vertical-align: middle;
     }
-`
+`;
 
 export default GlobalStyles;
