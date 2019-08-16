@@ -64,6 +64,10 @@ const StyledContainer = styled.div`
         padding-bottom: 1rem;
         margin-bottom: 2rem;
 
+        @media (max-width: 480px) {
+            flex-direction: column;
+        }
+
         &__fadeback {
             opacity: 0.2;
             font-size: 4rem;
