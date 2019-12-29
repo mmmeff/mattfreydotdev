@@ -5,20 +5,20 @@ import classnames from "classnames";
 
 // import Footer from './Footer';
 
-interface State {}
+interface State { }
 
 class Frame extends React.PureComponent<{}, State> {
     constructor(props: any) {
         super(props);
 
         this.state = {
-            bgImage: "/static/bgs/shed_thumb.webp"
+            bgImage: "/public/bgs/shed_thumb.webp"
         };
     }
 
-    componentDidMount() {}
+    componentDidMount() { }
 
-    componentWillUnmount() {}
+    componentWillUnmount() { }
 
     render() {
         return (
