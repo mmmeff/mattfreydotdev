@@ -131,7 +131,7 @@ const StyledContainer = styled.div`
     }
 
     .me {
-        background-image: url("/static/bgs/me.webp");
+        background-image: url("/images/bgs/me.webp");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: left top;
@@ -139,9 +139,13 @@ const StyledContainer = styled.div`
         mix-blend-mode: lighten;
         position: absolute;
         top: 0;
-        right: ${({ theme }) => theme.lineSizes.thiccc};
+        right: ${({ theme }) => theme.lineSizes.thin};
         bottom: 0;
         z-index: 1;
         pointer-events: none;
+
+        @media (min-width: 420px) {
+            right: ${({ theme }) => theme.lineSizes.thiccc};
+        }
     }
 `;

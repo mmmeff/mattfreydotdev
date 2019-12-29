@@ -1,24 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-// import isNode from 'detect-node';
 import classnames from "classnames";
 
-// import Footer from './Footer';
-
-interface State { }
+interface State {}
 
 class Frame extends React.PureComponent<{}, State> {
     constructor(props: any) {
         super(props);
 
         this.state = {
-            bgImage: "/public/bgs/shed_thumb.webp"
+            bgImage: "/images/bgs/shed_thumb.webp"
         };
     }
 
-    componentDidMount() { }
+    componentDidMount() {}
 
-    componentWillUnmount() { }
+    componentWillUnmount() {}
 
     render() {
         return (
@@ -56,6 +53,11 @@ export default styled(Frame)`
         right: 0;
         top: 0;
         min-height: calc(100vh - 40px);
+
+        @media (max-width: 480px) {
+            border-left-width: ${({ theme }) => theme.lineSizes.thin};
+            border-right-width: ${({ theme }) => theme.lineSizes.thin};
+        }
 
         @media print {
             border: none;
