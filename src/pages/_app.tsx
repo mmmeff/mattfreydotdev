@@ -1,7 +1,6 @@
 import React from "react";
-import App, { Container } from "next/app";
+import App from "next/app";
 import { ThemeProvider } from "styled-components";
-// import { IconContext } from 'react-icons';
 
 import GlobalStyles from "../designsystem/styles/GlobalStyles";
 import getTheme from "../designsystem/theme";
@@ -23,11 +22,9 @@ class MyApp extends App {
         const { Component, pageProps } = this.props;
 
         const Wrappers = ({ children }) => (
-            /* <IconContext.Provider value={{ color: getTheme('light').colors.textColor }}> */
             <ThemeProvider theme={getTheme("light")}>
-                <Container>{children}</Container>
+                {children}
             </ThemeProvider>
-            /* </IconContext.Provider> */
         );
 
         return (

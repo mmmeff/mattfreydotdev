@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next src",
-    "build": "next build src",
-    "start": "next start src",
-    "cicd": "next build src && next export src"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "cicd": "next build && next export"
   },
   "author": "Matthew Frey <matthewfrey118@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@zeit/next-typescript": "^1.1.1",
     "classnames": "^2.2.6",
     "detect-node": "^2.0.4",
     "next": "^9.0.3",
@@ -20,17 +19,18 @@
     "react-dom": "^16.9.0",
     "react-icons": "^3.7.0",
     "styled-components": "^4.3.2",
-    "styled-reset": "^3.0.2"
+    "styled-reset": "^4.0.8"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
     "@types/detect-node": "^2.0.0",
-    "@types/next": "^8.0.6",
+    "@types/next": "^9.0.0",
+    "@types/node": "^12.0.0",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.8.5",
-    "@types/styled-components": "4.1.18",
+    "@types/styled-components": "4.4.1",
     "babel-plugin-styled-components": "^1.10.6",
-    "fork-ts-checker-webpack-plugin": "^1.5.0",
+    "fork-ts-checker-webpack-plugin": "^4.0.0-beta.4",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.5.3"
