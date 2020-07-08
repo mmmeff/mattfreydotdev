@@ -102,6 +102,21 @@ export const education: EducationItem[] = [
 
 export const projects: ProjectItem[] = [
     {
+        name: "IMDbNext",
+        employer: "IMDb.com",
+        year: "2019+",
+        description: `
+            IMDbNext is an architectural upgrade project that aims to align the 
+            direction of the front-end team’s development, deployment, and 
+            hosting processes. IMDbNext utilizes modern front-end tooling like 
+            React, Next.js, and GraphQL to modernize key aspects of our user 
+            experience while shifting IMDb's infrastructure to containerized 
+            solutions on AWS. I led the design and implementation of this 
+            architecture and in the first year alone grew it to serve over 80% 
+            of IMDb's traffic.
+        `
+    },
+    {
         name: "PLAID (Pattern Library)",
         employer: "IMDb.com",
         year: "2018+",
@@ -113,13 +128,13 @@ export const projects: ProjectItem[] = [
         `
     },
     {
-        name: "Boomer",
+        name: "Microfrontend Architecture",
         year: "2018+",
         employer: "IMDb.com",
         description: `
-            The Boomer build tool allows developers to iterate on front-end code using
+            The URRF build tool allows developers to iterate on front-end code using
             all of the latest modern tooling while allowing for completely distributed,
-            "micro-frontend" architectures via deterministic asset generation and lambda
+            "micro-frontend" architectures via deterministic asset generation and AWS lambda
             server-side-renderer generation.
         `
     },
