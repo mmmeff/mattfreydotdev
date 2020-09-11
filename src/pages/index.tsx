@@ -20,7 +20,7 @@ export default class Home extends React.PureComponent {
                 <div className="content">
                     <h1 className="content__name">Matt Frey</h1>
                     <h3 className="content__is-a">
-                        is currently a <strong>Front-End Engineer</strong> at{" "}
+                        is currently a <strong>Senior Front-End Engineer</strong> at{" "}
                         <strong className="imdb">
                             <a href="https://www.imdb.com">IMDb</a>
                         </strong>{" "}
