@@ -31,10 +31,10 @@ export const experience: ExperienceItem[] = [
         startDate: "07/2018",
         endDate: "present",
         responsibilities: [
-            "On the Web-UI team tasked with increasing organizational front-end development velocity",
-            "Building pattern libraries, documentation sites, and CLI build tools to help IMDb.com go fully responsive by 2020",
-            "Supporting multiple other teams and initiatives across the organization by building libraries/tools to improve both developer and user-experience",
-            "Sharing on-call duty with platform team as first line of defense against outages"
+            "On the ConsumerWeb team tasked with owning and operating the IMDb.com front-ends",
+            "Supporting and maintaing the existing legacy implementation while working to modernize and replace it",
+            "Migrating IMDb to a Typescript+Next.js/React+GraphQL tech stack",
+            "Solving for AWS migration, localization, responsiveness, and regionalized deploys all at once"
         ]
     },
     {
