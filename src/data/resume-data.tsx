@@ -32,7 +32,7 @@ export const experience: ExperienceItem[] = [
         endDate: "present",
         responsibilities: [
             "On the ConsumerWeb team tasked with owning and operating the IMDb.com front-ends",
-            "Supporting and maintaing the existing legacy implementation while working to modernize and replace it",
+            "Supporting and maintaining legacy properties while working on the next-generation imdb.com",
             "Migrating IMDb to a Typescript+Next.js/React+GraphQL tech stack",
             "Solving for AWS migration, localization, responsiveness, and regionalized deploys all at once"
         ]
