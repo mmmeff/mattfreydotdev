@@ -26,7 +26,7 @@ export const experience: ExperienceItem[] = [
     {
         primary: true,
         name: "IMDb (Amazon)",
-        position: "Front-End Engineer II",
+        position: "Senior Front-End Engineer III",
         location: "Seattle, WA 🏔",
         startDate: "07/2018",
         endDate: "present",
