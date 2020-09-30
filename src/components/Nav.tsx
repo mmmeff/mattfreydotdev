@@ -53,12 +53,10 @@ export default styled(Nav)`
     margin: 0 auto;
     min-width: 260px;
     padding: 0.5rem 2rem;
-    /* position: absolute; */
     width: 100%;
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
 
     @media print {
         display: none;
