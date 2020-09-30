@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import classnames from "classnames";
+import React from 'react';
+import styled from 'styled-components';
+import classnames from 'classnames';
 
 interface Props {
     title: React.ReactNode;
@@ -10,6 +10,7 @@ interface Props {
     children?: React.ReactNode;
     fullWidth?: boolean;
     className?: any;
+    badge?: React.ReactNode;
 }
 
 const ResumeSubSection = (props: Props) => {
@@ -20,11 +21,16 @@ const ResumeSubSection = (props: Props) => {
         subtitle,
         aside1,
         aside2,
-        children
+        children,
+        badge,
     } = props;
 
     return (
-        <StyledContainer className={classnames(className, { fullWidth })}>
+        <StyledContainer
+            className={classnames(className, { fullWidth, hasBadge: !!badge })}
+        >
+            {badge && <div className="resume-sub__badge">{badge}</div>}
+
             <div className="resume-sub__heading">
                 <div className="resume-sub__left">
                     <h3>{title}</h3>
@@ -58,13 +64,13 @@ const StyledContainer = styled.div`
     }
 
     h4 {
-        color: ${ ({ theme }) => theme.colors.secondary };
+        color: ${({ theme }) => theme.colors.secondary};
     }
 
     .resume-sub__heading {
         align-items: center;
         border-bottom: ${({ theme }) =>
-            theme.lineSizes.thinnn + " solid " + theme.colors.primary};
+            theme.lineSizes.thinnn + ' solid ' + theme.colors.primary};
         display: flex;
         justify-content: space-between;
 
@@ -84,6 +90,20 @@ const StyledContainer = styled.div`
 
     .resume-sub__body {
         font-size: 0.8rem;
+    }
+
+    .resume-sub__badge {
+        position: absolute;
+        left: -2.75rem;
+        top: -5%;
+        font-size: 4rem;
+        opacity: 0.3;
+        color: ${({ theme }) => theme.colors.secondary};
+    }
+
+    &.hasBadge {
+        /* padding-left: 0.5rem; */
+        position: relative;
     }
 `;
 

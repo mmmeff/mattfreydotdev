@@ -1,5 +1,6 @@
-import React from "react";
-import ResumeSubSection from "./ResumeSubSection";
+import React from 'react';
+import ResumeSubSection from './ResumeSubSection';
+import { CgChevronDoubleUp } from 'react-icons/cg';
 
 export interface ExperienceItem {
     primary?: boolean;
@@ -9,18 +10,29 @@ export interface ExperienceItem {
     startDate: string;
     endDate: string;
     responsibilities: string[];
+    promotion?: boolean;
 }
 
-export const ExperienceItem = (props: ExperienceItem) => (
+export const ExperienceItem = ({
+    primary,
+    name,
+    position,
+    location,
+    startDate,
+    endDate,
+    responsibilities,
+    promotion,
+}: ExperienceItem) => (
     <ResumeSubSection
-        fullWidth={props.primary}
-        title={props.name}
-        subtitle={props.position}
-        aside1={`${props.startDate} - ${props.endDate}`}
-        aside2={props.location}
+        fullWidth={primary}
+        title={name}
+        subtitle={position}
+        aside1={`${startDate} - ${endDate}`}
+        aside2={location}
+        badge={promotion && <CgChevronDoubleUp />}
     >
         <ul>
-            {props.responsibilities.map(x => (
+            {responsibilities?.map((x: string) => (
                 <li key={x}>{x}</li>
             ))}
         </ul>

@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import ResumeSection from "../components/resume/ResumeSection";
-import { ExperienceItem } from "../components/resume/ExperienceItem";
-import { EducationItem } from "../components/resume/EducationItem";
-import { ProjectItem } from "../components/resume/ProjectItem";
-import resumeData from "../data/resume-data";
+import ResumeSection from '../components/resume/ResumeSection';
+import { ExperienceItem } from '../components/resume/ExperienceItem';
+import { EducationItem } from '../components/resume/EducationItem';
+import { ProjectItem } from '../components/resume/ProjectItem';
+import resumeData from '../data/resume-data';
 
 export const Resume = () => (
     <StyledContainer>
@@ -18,7 +18,7 @@ export const Resume = () => (
             </div>
 
             <ul className="resume-header__contact">
-                {resumeData.contactLinks.map(link => (
+                {resumeData.contactLinks.map((link) => (
                     <li key={link.href}>
                         <a href={link.href} target="__blank">
                             {link.label}&nbsp;&nbsp;{link.icon}
@@ -30,19 +30,19 @@ export const Resume = () => (
 
         <ResumeSection title="Experience">
             {resumeData.experience.map((x, i) => (
-                <ExperienceItem key={ i } {...x} />
+                <ExperienceItem key={i} {...x} />
             ))}
         </ResumeSection>
 
         <ResumeSection title="Education">
             {resumeData.education.map((x, i) => (
-                <EducationItem key={ i } {...x} />
+                <EducationItem key={i} {...x} />
             ))}
         </ResumeSection>
 
-        <ResumeSection title="Notable Projects">
+        <ResumeSection title="Notable Projects" pageBreak>
             {resumeData.projects.map((x, i) => (
-                <ProjectItem key={ i } {...x} />
+                <ProjectItem key={i} {...x} />
             ))}
         </ResumeSection>
     </StyledContainer>

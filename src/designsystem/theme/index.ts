@@ -4,7 +4,7 @@ const darkColors: Colors = {
     lineColor: "rgba(255,255,255,0.5)",
     linkColor: "#84CBE1",
     primary: "#1185F9",
-    secondary: "#D52FA8"
+    secondary: "#D52FA8",
 };
 
 const lightColors: Colors = {
@@ -13,13 +13,13 @@ const lightColors: Colors = {
     linkColor: "#1185F9",
     lineColor: "rgba(0,0,0,0.5)",
     primary: "#9EB9D4",
-    secondary: "#D52FA8"
+    secondary: "#D52FA8",
 };
 
 export const getTheme: (mode: "light" | "dark") => Theme = mode => ({
     colors: {
         ...(mode === "light" ? lightColors : {}),
-        ...(mode === "dark" ? darkColors : {})
+        ...(mode === "dark" ? darkColors : {}),
     } as Colors,
     lineSizes: {
         thinnn: "0.065rem",
@@ -27,8 +27,8 @@ export const getTheme: (mode: "light" | "dark") => Theme = mode => ({
         thin: "0.25rem",
         thic: "0.5rem",
         thicc: "1rem",
-        thiccc: "1.5rem"
-    }
+        thiccc: "1.5rem",
+    },
 });
 
 export default getTheme;
