@@ -1,5 +1,5 @@
 import { ExperienceItem } from '../components/resume/ExperienceItem';
-import { FaGithub, FaEnvelope, FaGlobeAmericas, FaPhone } from 'react-icons/fa';
+import { FaEnvelope, FaGlobeAmericas, FaPhone } from 'react-icons/fa';
 import { ProjectItem } from '../components/resume/ProjectItem';
 import { EducationItem } from '../components/resume/EducationItem';
 
@@ -10,11 +10,6 @@ export const contactLinks = [
         icon: <FaGlobeAmericas />,
     },
     { href: 'te:18453810044', label: '(845) 381-0044', icon: <FaPhone /> },
-    {
-        href: 'https://www.github.com/mmmeff',
-        label: 'github.com/mmmeff',
-        icon: <FaGithub />,
-    },
     {
         href: 'mailto:matthewfrey@protonmail.com',
         label: 'matthewfrey@protonmail.com',
