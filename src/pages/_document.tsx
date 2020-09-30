@@ -1,14 +1,14 @@
-import Document, { Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet, ThemeProvider } from "styled-components";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet, ThemeProvider } from 'styled-components';
 
-import getTheme from "../designsystem/theme";
+import getTheme from '../designsystem/theme';
 
 export default class Doc extends Document<{ styleTags: any }> {
     static getInitialProps({ renderPage }) {
         const sheet = new ServerStyleSheet();
 
-        const page = renderPage(App => {
-            return props => {
+        const page = renderPage((App) => {
+            return (props) => {
                 return sheet.collectStyles(<App {...props} />);
             };
         });
@@ -20,24 +20,25 @@ export default class Doc extends Document<{ styleTags: any }> {
 
     render() {
         return (
-            <ThemeProvider theme={getTheme("light")}>
-                <html lang="en">
-                    <Head>
-                        <link
-                            rel="stylesheet"
-                            href="https://fonts.googleapis.com/css?family=Roboto+Slab"
-                        />
+            <Html>
+                <ThemeProvider theme={getTheme('light')}>
+                    <html lang="en">
+                        <Head>
+                            <link
+                                rel="stylesheet"
+                                href="https://fonts.googleapis.com/css?family=Roboto+Slab"
+                            />
+                            {this.props.styleTags}
+                        </Head>
 
-                        {this.props.styleTags}
-                    </Head>
+                        <body>
+                            <Main />
 
-                    <body>
-                        <Main />
-
-                        <NextScript />
-                    </body>
-                </html>
-            </ThemeProvider>
+                            <NextScript />
+                        </body>
+                    </html>
+                </ThemeProvider>
+            </Html>
         );
     }
 }
