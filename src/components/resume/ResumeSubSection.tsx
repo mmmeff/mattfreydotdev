@@ -94,7 +94,7 @@ const StyledContainer = styled.div`
 
     .resume-sub__badge {
         position: absolute;
-        left: -2.75rem;
+        left: -3.75rem;
         top: -5%;
         font-size: 4rem;
         opacity: 0.3;

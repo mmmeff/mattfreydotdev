@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
-import { GiMountaintop } from 'react-icons/gi';
+import { GiMountaintop, GiMushrooms } from 'react-icons/gi';
+import { DiRust } from 'react-icons/di';
+import { FaTruckMonster, FaBicycle } from 'react-icons/fa';
 
 export default class Home extends React.PureComponent {
     render() {
@@ -18,19 +20,45 @@ export default class Home extends React.PureComponent {
                 <div className="glyph" />
 
                 <div className="content">
-                    <h1 className="content__name">Matt Frey</h1>
-                    <h3 className="content__is-a">
-                        is currently a{' '}
-                        <strong>Senior Front-End Engineer</strong> at{' '}
-                        <strong className="imdb">
-                            <a href="https://www.imdb.com">IMDb</a>
-                        </strong>{' '}
-                        and lives in{' '}
-                        <strong>
-                            Seattle,&nbsp;WA&nbsp;
-                            <GiMountaintop />
-                        </strong>
-                    </h3>
+                    <div className="content-item content-item--lead">
+                        <h1 className="content__name">Matt Frey</h1>
+                        <h3 className="content__is-a">
+                            is currently a{' '}
+                            <strong>Senior Front-End Engineer</strong> at{' '}
+                            <strong className="imdb">
+                                <a href="https://www.imdb.com">IMDb</a>
+                            </strong>{' '}
+                            and lives in{' '}
+                            <strong>
+                                Seattle,&nbsp;WA&nbsp;
+                                <GiMountaintop />
+                            </strong>
+                        </h3>
+                    </div>
+
+                    <div className="content-item content-item--list">
+                        <p>
+                            At the moment, he's learning:
+                            <ul>
+                                <li>
+                                    <DiRust size={30} />
+                                    Rust
+                                </li>
+                                <li>
+                                    <FaTruckMonster size={30} />
+                                    Classic Truck Maintainence
+                                </li>
+                                <li>
+                                    <GiMushrooms size={30} />
+                                    Gourmet Mushroom Cultivation
+                                </li>
+                                <li>
+                                    <FaBicycle size={30} />
+                                    Spin Classes (without dying)
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
                 </div>
             </StyledContainer>
         );
@@ -38,19 +66,26 @@ export default class Home extends React.PureComponent {
 }
 
 const StyledContainer = styled.div`
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .content {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        height: calc(100vh - 40px);
         margin: 0 auto;
-        max-width: 1024px;
         overflow: hidden;
+        padding: 2rem 0 0;
+        max-width: 1024px;
         position: relative;
         z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
 
         @media (min-width: 420px) {
-            padding: 0 2rem 2rem;
+            padding: 0 2rem;
         }
 
         strong {
@@ -88,6 +123,7 @@ const StyledContainer = styled.div`
 
             @media (min-width: 1024px) {
                 font-size: 10rem;
+                margin-top: 4rem;
             }
         }
 
@@ -101,6 +137,36 @@ const StyledContainer = styled.div`
 
             @media (min-width: 1024px) {
                 font-size: 3rem;
+            }
+        }
+
+        .content-item {
+            /* border: 3px solid red; */
+            padding: 1rem;
+            font-weight: bold;
+
+            &--list {
+                background: rgba(255, 255, 255, 0.1);
+                padding-left: 2rem;
+                padding-right: 2rem;
+                max-width: 420px;
+                border-radius: 0.5rem;
+
+                @media (min-width: 768px) {
+                    margin-left: auto;
+                }
+
+                ul {
+                    list-style: none;
+                    li {
+                        margin-left: 1rem;
+                    }
+                    li > svg {
+                        vertical-align: bottom;
+                        position: relative;
+                        left: -1rem;
+                    }
+                }
             }
         }
     }
@@ -140,13 +206,9 @@ const StyledContainer = styled.div`
         mix-blend-mode: lighten;
         position: absolute;
         top: 0;
-        right: ${({ theme }) => theme.lineSizes.thin};
+        right: 0;
         bottom: 0;
         z-index: 1;
         pointer-events: none;
-
-        @media (min-width: 420px) {
-            right: ${({ theme }) => theme.lineSizes.thiccc};
-        }
     }
 `;
