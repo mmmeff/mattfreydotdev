@@ -46,7 +46,7 @@ export default class Home extends React.PureComponent {
                                 </li>
                                 <li>
                                     <FaTruckMonster size={30} />
-                                    Classic Truck Maintenence
+                                    Classic Truck Maintenance
                                 </li>
                                 <li>
                                     <GiMushrooms size={30} />
