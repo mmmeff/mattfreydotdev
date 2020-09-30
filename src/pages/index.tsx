@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import Head from "next/head";
-import { GiMountaintop } from "react-icons/gi";
+import React from 'react';
+import styled from 'styled-components';
+import Head from 'next/head';
+import { GiMountaintop } from 'react-icons/gi';
 
 export default class Home extends React.PureComponent {
     render() {
@@ -20,11 +20,12 @@ export default class Home extends React.PureComponent {
                 <div className="content">
                     <h1 className="content__name">Matt Frey</h1>
                     <h3 className="content__is-a">
-                        is currently a <strong>Senior Front-End Engineer</strong> at{" "}
+                        is currently a{' '}
+                        <strong>Senior Front-End Engineer</strong> at{' '}
                         <strong className="imdb">
                             <a href="https://www.imdb.com">IMDb</a>
-                        </strong>{" "}
-                        and lives in{" "}
+                        </strong>{' '}
+                        and lives in{' '}
                         <strong>
                             Seattle,&nbsp;WA&nbsp;
                             <GiMountaintop />
@@ -62,7 +63,7 @@ const StyledContainer = styled.div`
                 background: #f5c518;
                 border-radius: 5px;
                 display: inline-block;
-                font-family: "Impact", sans-serif;
+                font-family: 'Impact', sans-serif;
                 font-style: initial;
                 padding: 0 0.33em;
                 text-shadow: none;
@@ -131,7 +132,7 @@ const StyledContainer = styled.div`
     }
 
     .me {
-        background-image: url("/images/bgs/me.webp");
+        background-image: url('/images/bgs/me.webp');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: left top;

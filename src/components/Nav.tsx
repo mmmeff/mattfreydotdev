@@ -1,7 +1,7 @@
-import * as React from "react";
-import Link from "next/link";
-import styled, { ThemeProvider } from "styled-components";
-import getTheme from "../designsystem/theme";
+import * as React from 'react';
+import Link from 'next/link';
+import styled, { ThemeProvider } from 'styled-components';
+import getTheme from '../designsystem/theme';
 
 interface Props {
     className?: string;
@@ -12,12 +12,12 @@ class Nav extends React.PureComponent<Props> {
         const { className } = this.props;
 
         const links = [
-            ["Resume", "/resume"]
+            ['Resume', '/resume'],
             // ['Blog', '/blog']
         ];
 
         return (
-            <ThemeProvider theme={getTheme("dark")}>
+            <ThemeProvider theme={getTheme('dark')}>
                 <div className={className}>
                     <Link href="/">
                         <a>mattfrey.dev</a>
@@ -29,7 +29,7 @@ class Nav extends React.PureComponent<Props> {
                                 <Link href={link[1]}>
                                     <a className="nav__link">{link[0]}</a>
                                 </Link>
-                                {i < links.length - 1 && " | "}
+                                {i < links.length - 1 && ' | '}
                             </React.Fragment>
                         ))}
                     </div>
@@ -42,7 +42,7 @@ class Nav extends React.PureComponent<Props> {
 export default styled(Nav)`
     align-items: center;
     background-color: ${({ theme }) => theme.colors.background};
-    background-image: url("/images/bgs/shed_mini.webp");
+    background-image: url('/images/bgs/shed_mini.webp');
     background-size: cover;
     background-position: 100% 420px;
     background-attachment: fixed;
@@ -53,11 +53,12 @@ export default styled(Nav)`
     margin: 0 auto;
     min-width: 260px;
     padding: 0.5rem 2rem;
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     top: 0;
     left: 0;
     right: 0;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
 
     @media print {
         display: none;
@@ -65,6 +66,8 @@ export default styled(Nav)`
 
     a {
         color: ${({ theme }) => theme.colors.textColor};
+        text-transform: uppercase;
+        font-weight: bold;
     }
 
     .nav__link {

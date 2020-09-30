@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import classnames from "classnames";
+import React from 'react';
+import styled from 'styled-components';
+import classnames from 'classnames';
 
 interface State {}
 
@@ -9,7 +9,7 @@ class Frame extends React.PureComponent<{}, State> {
         super(props);
 
         this.state = {
-            bgImage: "/images/bgs/shed_thumb.webp"
+            bgImage: '/images/bgs/shed_thumb.webp',
         };
     }
 
@@ -42,8 +42,7 @@ export default styled(Frame)`
     background-position: top center;
 
     .frame__content {
-        border: ${({ theme }) => theme.lineSizes.thiccc} solid
-            ${({ theme }) => theme.colors.primary};
+        border: ${({ theme }) => theme.lineSizes.thiccc} solid white;
         border-top-width: 0;
         border-bottom-width: 0;
         bottom: 0;

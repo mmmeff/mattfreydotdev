@@ -1,44 +1,30 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet, ThemeProvider } from 'styled-components';
+import Document, { DocumentContext } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
-import getTheme from '../designsystem/theme';
-
-export default class Doc extends Document<{ styleTags: any }> {
-    static getInitialProps({ renderPage }) {
+export default class MyDocument extends Document {
+    static async getInitialProps(ctx: DocumentContext) {
         const sheet = new ServerStyleSheet();
+        const originalRenderPage = ctx.renderPage;
 
-        const page = renderPage((App) => {
-            return (props) => {
-                return sheet.collectStyles(<App {...props} />);
+        try {
+            ctx.renderPage = () =>
+                originalRenderPage({
+                    enhanceApp: (App) => (props) =>
+                        sheet.collectStyles(<App {...props} />),
+                });
+
+            const initialProps = await Document.getInitialProps(ctx);
+            return {
+                ...initialProps,
+                styles: (
+                    <>
+                        {initialProps.styles}
+                        {sheet.getStyleElement()}
+                    </>
+                ),
             };
-        });
-
-        const styleTags = sheet.getStyleElement();
-
-        return { ...page, styleTags };
-    }
-
-    render() {
-        return (
-            <Html>
-                <ThemeProvider theme={getTheme('light')}>
-                    <html lang="en">
-                        <Head>
-                            <link
-                                rel="stylesheet"
-                                href="https://fonts.googleapis.com/css?family=Roboto+Slab"
-                            />
-                            {this.props.styleTags}
-                        </Head>
-
-                        <body>
-                            <Main />
-
-                            <NextScript />
-                        </body>
-                    </html>
-                </ThemeProvider>
-            </Html>
-        );
+        } finally {
+            sheet.seal();
+        }
     }
 }
