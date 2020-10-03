@@ -28,9 +28,9 @@ export const experience: ExperienceItem[] = [
         endDate: 'present',
         responsibilities: [
             'On the ConsumerWeb team tasked with owning and operating the IMDb.com front-ends',
-            'Supporting and maintaining legacy properties while working on our next-generation platform',
             "Team Lead driving IMDb's migration to a Typescript+Next.js/React+GraphQL tech stack",
-            'Solving for AWS migration, localization, responsiveness, and regionalized deploys across the organization',
+            "Architecting and executing IMDb's AWS migration, responsive redesign, and localization/regionalization efforts",
+            'Supporting and maintaining legacy properties while working on our next-generation platform',
         ],
     },
     {
