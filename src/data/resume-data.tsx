@@ -42,9 +42,9 @@ export const experience: ExperienceItem[] = [
         endDate: '09/2020',
         responsibilities: [
             'On the Web-UI team tasked with increasing organizational front-end development velocity',
-            'Building pattern libraries, documentation sites, and CLI build tools to help IMDb.com go fully responsive by 2020',
-            'Supporting multiple other teams and initiatives across the organization by building libraries/tools to improve both developer and user-experience',
-            'Sharing on-call duty with platform team as first line of defense against outages',
+            'Built pattern libraries, documentation sites, and CLI build tools to help IMDb.com begin modernizing their site',
+            'Supported multiple other teams and initiatives across the organization by building libraries/tools to improve both developer and user-experience',
+            'Shared on-call duty as first line of defense against outages and bad actors',
         ],
     },
     {
