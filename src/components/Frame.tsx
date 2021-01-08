@@ -65,6 +65,7 @@ export default styled(Frame)`
 
     .frame__content--inner {
         margin: 0 auto;
+        max-width: 1280px;
         min-width: 260px;
         width: 100%;
         display: flex;
