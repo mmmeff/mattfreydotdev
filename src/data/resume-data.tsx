@@ -9,7 +9,6 @@ export const contactLinks = [
         label: 'mattfrey.dev',
         icon: <FaGlobeAmericas />,
     },
-    { href: 'te:18453810044', label: '(845) 381-0044', icon: <FaPhone /> },
     {
         href: 'mailto:matthewfrey@protonmail.com',
         label: 'matthewfrey@protonmail.com',
