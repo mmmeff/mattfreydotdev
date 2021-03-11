@@ -53,7 +53,7 @@ export default class Home extends React.PureComponent {
                                     Gourmet Mushroom Cultivation
                                 </li>
                                 <li>
-                                    <FaGuitar size={30} />
+                                    <GiGuitar size={30} />
                                     Guitar Shredding
                                 </li>
                             </ul>
