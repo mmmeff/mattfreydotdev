@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
-import { GiMountaintop, GiMushrooms } from 'react-icons/gi';
+import { GiMountaintop, GiMushrooms, GiGuitar } from 'react-icons/gi';
 import { DiRust } from 'react-icons/di';
-import { FaTruckMonster, FaBicycle } from 'react-icons/fa';
+import { FaTruckMonster } from 'react-icons/fa';
 
 export default class Home extends React.PureComponent {
     render() {
@@ -53,8 +53,8 @@ export default class Home extends React.PureComponent {
                                     Gourmet Mushroom Cultivation
                                 </li>
                                 <li>
-                                    <FaBicycle size={30} />
-                                    Spin Classes (without dying)
+                                    <FaGuitar size={30} />
+                                    Guitar Shredding
                                 </li>
                             </ul>
                         </p>
