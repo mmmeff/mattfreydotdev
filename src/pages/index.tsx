@@ -45,12 +45,8 @@ export default class Home extends React.PureComponent {
                                     Rust
                                 </li>
                                 <li>
-                                    <FaTruckMonster size={30} />
-                                    Classic Truck Maintenance
-                                </li>
-                                <li>
                                     <GiMushrooms size={30} />
-                                    Gourmet Mushroom Cultivation
+                                    Mushroom Foraging &amp; Cultivation
                                 </li>
                                 <li>
                                     <GiGuitar size={30} />
