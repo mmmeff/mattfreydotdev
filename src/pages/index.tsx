@@ -24,9 +24,9 @@ export default class Home extends React.PureComponent {
                         <h1 className="content__name">Matt Frey</h1>
                         <h3 className="content__is-a">
                             is currently a{' '}
-                            <strong>Senior Front-End Engineer</strong> at{' '}
-                            <strong className="imdb">
-                                <a href="https://www.imdb.com">IMDb</a>
+                            <strong>Lead Software Engineer</strong> at{' '}
+                            <strong className="stoke">
+                                <a href="http://stokespace.com/">STOKE Space Technologies</a>
                             </strong>{' '}
                             and lives in{' '}
                             <strong>
@@ -90,17 +90,11 @@ const StyledContainer = styled.div`
             font-size: 1.1em;
             text-shadow: 1px 2px red;
 
-            &.imdb {
-                background: #f5c518;
-                border-radius: 5px;
+            &.stoke {
                 display: inline-block;
-                font-family: 'Impact', sans-serif;
-                font-style: initial;
-                padding: 0 0.33em;
-                text-shadow: none;
 
                 a {
-                    color: black;
+                    color: #E0472D;
                     &:hover:after {
                         display: none;
                     }
