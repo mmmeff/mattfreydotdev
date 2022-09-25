@@ -122,7 +122,7 @@ const StyledContainer = styled.div`
             grid-row: span 2;
             place-self: center;
             text-align: center;
-            width: 100%;
+            width: 95%;
             padding: 0 1rem;
 
             @media (min-width: 1024px) {
