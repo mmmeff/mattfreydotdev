@@ -25,7 +25,7 @@ export const experience: ExperienceItem[] = [
         startDate: '06/2022',
         endDate: 'present',
         responsibilities: [
-            'Leading the design and implementation of Fusion by STOKE, a SaaS product that solves inventory tracking and work management in the hardware space. Think JIRA for the hardware space',
+            'Leading the design and implementation of Fusion by STOKE, a SaaS product that solves inventory tracking and work management in the hardware space. Think JIRA for hardware',
             'Full-stack development of the entire platform, including a Prisma-powered GraphQL API and a Next.js front-end',
             'Coaching and mentoring junior engineers on the team as we tackle an ambiguous problem space',
             'Designing, building, and maintaining infrastructure on AWS Fargate, CI/CD, end-to-end testing, and operational observability',
