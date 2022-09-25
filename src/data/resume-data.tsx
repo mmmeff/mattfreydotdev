@@ -18,13 +18,26 @@ export const contactLinks = [
 
 export const experience: ExperienceItem[] = [
     {
-        primary: true,
+        name: 'STOKE Space Technologies',
+        position: 'Lead Software Engineer',
+        location: 'Kent, WA 🏔',
+        startDate: '06/2022',
+        endDate: 'present',
+        responsibilities: [
+            'Leading the design and implementation of Fusion by STOKE, a SaaS product that solves inventory and work management in the hardware space. Think JIRA for hardware',
+            'Full-stack development of the entire platform, including a Prisma-powered GraphQL API and a Next.js front-end',
+            'Coaching and mentoring junior engineers on the team as we tackle an ambiguous problem space',
+            'Designing, building, and maintaining infrastructure on AWS Fargate, CI/CD, end-to-end testing, and operational observability',
+            'Occasionally installing a network switch or two at our engine test facilities'
+        ]
+    },
+    {
         promotion: true,
         name: 'IMDb/Amazon',
         position: '[Promoted] Senior Front-End Engineer III',
         location: 'Seattle, WA 🏔',
         startDate: '10/2020',
-        endDate: 'present',
+        endDate: '06/2022',
         responsibilities: [
             'On the ConsumerWeb team tasked with owning and operating the IMDb.com front-ends',
             "Team Lead driving IMDb's migration to a Typescript+Next.js/React+GraphQL tech stack",
@@ -33,7 +46,6 @@ export const experience: ExperienceItem[] = [
         ],
     },
     {
-        primary: true,
         name: 'IMDb/Amazon',
         position: 'Front-End Engineer II',
         location: 'Seattle, WA 🏔',
