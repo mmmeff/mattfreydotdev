@@ -18,6 +18,7 @@ export const contactLinks = [
 
 export const experience: ExperienceItem[] = [
     {
+        primary: true,
         name: 'STOKE Space Technologies',
         position: 'Lead Software Engineer',
         location: 'Kent, WA 🏔',
