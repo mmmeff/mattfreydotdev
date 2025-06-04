@@ -1,6 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import classnames from 'classnames';
+import React from "react";
+import styled from "styled-components";
+import classnames from "classnames";
+import { FaLink } from "react-icons/fa";
 
 interface Props {
     title: React.ReactNode;
@@ -11,6 +12,7 @@ interface Props {
     fullWidth?: boolean;
     className?: any;
     badge?: React.ReactNode;
+    link?: string;
 }
 
 const ResumeSubSection = (props: Props) => {
@@ -23,6 +25,7 @@ const ResumeSubSection = (props: Props) => {
         aside2,
         children,
         badge,
+        link,
     } = props;
 
     return (
@@ -33,7 +36,22 @@ const ResumeSubSection = (props: Props) => {
 
             <div className="resume-sub__heading">
                 <div className="resume-sub__left">
-                    <h3>{title}</h3>
+                    <h3>
+                        {title}
+                        {link && (
+                            <a
+                                href={link}
+                                target="__blank"
+                                style={{
+                                    color: "blueviolet",
+                                    marginLeft: "0.5rem",
+                                    fontSize: "0.85rem",
+                                }}
+                            >
+                                <FaLink />
+                            </a>
+                        )}
+                    </h3>
                     {subtitle && <h4>{subtitle}</h4>}
                 </div>
 
@@ -70,7 +88,7 @@ const StyledContainer = styled.div`
     .resume-sub__heading {
         align-items: center;
         border-bottom: ${({ theme }) =>
-            theme.lineSizes.thinnn + ' solid ' + theme.colors.primary};
+            theme.lineSizes.thinnn + " solid " + theme.colors.primary};
         display: flex;
         justify-content: space-between;
 

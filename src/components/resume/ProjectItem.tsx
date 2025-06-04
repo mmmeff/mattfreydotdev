@@ -7,6 +7,7 @@ export interface ProjectItem {
     description: React.ReactNode;
     year: string;
     client?: React.ReactNode;
+    link?: string;
 }
 
 export const ProjectItem = (props: ProjectItem) => (
@@ -14,6 +15,7 @@ export const ProjectItem = (props: ProjectItem) => (
         title={props.name}
         subtitle={props.employer + (!!props.client ? ` - ${props.client}` : "")}
         aside1={props.year}
+        link={props.link}
     >
         <p>{props.description}</p>
     </ResumeSubSection>

@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import ResumeSection from '../components/resume/ResumeSection';
-import { ExperienceItem } from '../components/resume/ExperienceItem';
-import { EducationItem } from '../components/resume/EducationItem';
-import { ProjectItem } from '../components/resume/ProjectItem';
-import resumeData from '../data/resume-data';
+import ResumeSection from "../components/resume/ResumeSection";
+import { ExperienceItem } from "../components/resume/ExperienceItem";
+import { EducationItem } from "../components/resume/EducationItem";
+import { ProjectItem } from "../components/resume/ProjectItem";
+import resumeData from "../data/resume-data";
 
 export const Resume = () => (
     <StyledContainer>
@@ -18,7 +18,7 @@ export const Resume = () => (
             </div>
 
             <ul className="resume-header__contact">
-                {resumeData.contactLinks.map((link) => (
+                {resumeData.contactLinks.map(link => (
                     <li key={link.href}>
                         <a href={link.href} target="__blank">
                             {link.label}&nbsp;&nbsp;{link.icon}
@@ -34,13 +34,13 @@ export const Resume = () => (
             ))}
         </ResumeSection>
 
-        <ResumeSection title="Education">
+        <ResumeSection title="Education" pageBreak>
             {resumeData.education.map((x, i) => (
                 <EducationItem key={i} {...x} />
             ))}
         </ResumeSection>
 
-        <ResumeSection title="Notable Projects" pageBreak>
+        <ResumeSection title="Notable Projects">
             {resumeData.projects.map((x, i) => (
                 <ProjectItem key={i} {...x} />
             ))}

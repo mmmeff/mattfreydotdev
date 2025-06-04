@@ -1,6 +1,6 @@
-import * as React from 'react';
-import classnames from 'classnames';
-import styled from 'styled-components';
+import * as React from "react";
+import classnames from "classnames";
+import styled from "styled-components";
 
 interface Props {
     title: string;
@@ -30,9 +30,6 @@ const StyledContainer = styled.section`
 
     &.pageBreak {
         page-break-before: always;
-        @media print {
-            margin-top: 6rem;
-        }
     }
 `;
 
